@@ -14,19 +14,19 @@ pub fn generate_template(platforms: Vec<Platform>) -> String {
     let size_map: HashMap<Platform, String> = HashMap::from([
         (
             Platform::Web,
-            "<link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">".to_string(),
+            "<link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\">".to_string(),
         ),
         (
             Platform::Modern,
             "<link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\">".to_string(),
         ),
         (
-            Platform::Android,
-            "<link rel=\"manifest\" href=\"/manifest.webmanifest\">".to_string(),
-        ),
-        (
             Platform::Apple,
             "<link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">".to_string(),
+        ),
+        (
+            Platform::Android,
+            "<link rel=\"manifest\" href=\"/manifest.webmanifest\">".to_string(),
         ),
     ]);
 
@@ -76,10 +76,10 @@ mod tests {
   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
   <title>Sample Fav Project</title>
-  <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">
+  <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"32x32\">
   <link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\">
-  <link rel=\"manifest\" href=\"/manifest.webmanifest\">
   <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">
+  <link rel=\"manifest\" href=\"/manifest.webmanifest\">
 </head>
 
 <body>
