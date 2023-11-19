@@ -52,7 +52,12 @@ pub fn validate_args(mut args: Args) -> Result<Args, String> {
     }
 
     if args.platforms.is_none() {
-        args.platforms = Option::from(Vec::from([Platform::Web, Platform::Modern, Platform::Android, Platform::Apple]));
+        args.platforms = Option::from(Vec::from([
+            Platform::Web,
+            Platform::Modern,
+            Platform::Android,
+            Platform::Apple,
+        ]));
     }
 
     if args.output.is_none() {
@@ -85,7 +90,12 @@ mod tests {
         assert_eq!(result.is_err(), false);
         assert_eq!(
             result.unwrap().platforms.unwrap(),
-            Vec::from([Platform::Web, Platform::Modern])
+            Vec::from([
+                Platform::Web,
+                Platform::Modern,
+                Platform::Android,
+                Platform::Apple,
+            ])
         );
     }
 
