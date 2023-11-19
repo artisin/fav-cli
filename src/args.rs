@@ -52,7 +52,7 @@ pub fn validate_args(mut args: Args) -> Result<Args, String> {
     }
 
     if args.platforms.is_none() {
-        args.platforms = Option::from(Vec::from([Platform::Web, Platform::Modern]));
+        args.platforms = Option::from(Vec::from([Platform::Web, Platform::Modern, Platform::Android, Platform::Apple]));
     }
 
     if args.output.is_none() {
